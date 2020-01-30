@@ -1,0 +1,96 @@
+# Package configuration
+
+# Debian only
+
+apt_packages:
+  - cowsay
+  - firefox
+  - ffmpeg
+  - git
+  - gnupg
+  - htop
+  - hub
+  - openssh
+  - openssl
+  - progress
+  - telegram-desktop
+  - tmux
+  - tree
+  - vagrant
+  - vim
+  - virtualbox
+  - wget
+  - zsh
+
+# macOS only
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+  - homebrew/cask-fonts
+
+homebrew_installed_packages:
+  - bash
+  - binutils
+  - coreutils
+  - cowsay
+  - ffmpeg
+  - git
+  - gnupg
+  - gnutls
+  - htop
+  - hub
+  - openssh
+  - openssl
+  - ponysay
+  - progress
+  - tmux
+  - tree
+  - vim
+  - wget
+  - zsh
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - amethyst
+  - bitwarden
+  - gpg-suite-no-mail
+  - firefox
+  - font-meslo-for-powerline
+  - iterm2
+  - krita
+  - mediahuman-audio-converter
+  - mactex-no-gui
+  - parsec
+  - pycharm
+  - riot
+  - steam
+  - telegram-desktop
+  - the-unarchiver
+  - thunderbird
+  - tor-browser
+  - tunnelblick
+  - vagrant
+  - virtualbox
+  - vlc
+  - webstorm
+  - wireshark
+
+mas_installed_apps:
+  - { id: 1384080005, name: "Tweetbot" }
+  - { id: 682658836, name: "Garageband" }
+  - { id: 408981434, name: "iMovie" }
+  - { id: 497799835, name: "Xcode" }
+mas_email: ""
+mas_password: ""
+
+# Crossplattform
+
+pip_packages:
+  - { name: mkdocs, executable: /usr/local/bin/pip3 }
+  - { name: mkdocs-windmill-dark, executable: /usr/local/bin/pip3 }
+  - { name: ansible-lint, executable: /usr/local/bin/pip3 }
+  - { name: dopy, executable: /usr/local/bin/pip3 }
+
+gem_packages:
+  - name: bundler
+  - name: jekyll

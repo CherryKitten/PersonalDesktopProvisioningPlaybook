@@ -1,0 +1,36 @@
+---
+# Enable/Disable specific Parts of the provisioning
+dotfiles_enabled: true
+
+# Mac only
+homebrew_enabled: true
+mas_enabled: true
+defaults_enabled: true
+
+# Debian only
+apt_enabled: true
+
+# Dotfiles configuration
+dotfiles_repo: https://github.com/CherryKitten/dotfiles
+dotfiles_repo_accept_hostkey: yes
+dotfiles_repo_local_destination: ~/dotfiles
+dotfiles_files:
+  - .gitconfig
+  - .globalgitignore
+  - .latex
+  - .oh-my-custom
+  - .tmux
+  - .tmux.conf
+  - .tmux.theme
+  - .vim
+  - .vimrc
+  - .zshrc
+
+macOS_defaults:
+  - { domain: NSGlobalDomain, key: AppleHighlightColor, type: string, value: 1.000000 0.749020 0.823529 }
+  - { domain: NSGlobalDomain, key: AppleInterfaceStyle, type: string, value: Dark }
+  - { domain: NSGlobalDomain, key: AppleLanguages, type: array, value: [en-US] }
+  - { domain: NSGlobalDomain, key: AppleMeasurementUnits, type: string, value: Centimeters }
+  - { domain: NSGlobalDomain, key: AppleMetricUnits, type: bool, value: true }
+  - { domain: NSGlobalDomain, key: AppleShowScrollBars, type: string, value: Always }
+  - { domain: NSGlobalDomain, key: AppleTemperatureUnit, type: string, value: Celsius}

@@ -1,0 +1,33 @@
+---
+- hosts: localhost
+  connection: local
+
+  vars_files:
+    - config.yml
+    - packageconfig.yml
+
+  roles:
+    - role: geerlingguy.homebrew
+      tags: ['homebrew']
+      when: ansible_os_family == "Darwin" and homebrew_enabled
+    - role: geerlingguy.dotfiles
+      when: dotfiles_enabled
+      tags: ['dotfiles']
+    - role: geerlingguy.mas
+      when: ansible_os_family == "Darwin" and mas_enabled
+      tags: ['mas']
+
+  tasks:
+    - name: Include Debian specific tasks
+      include_tasks: tasks/debian.yml
+      tags: ['Debian']
+      when: ansible_os_family == "Debian" and apt_enabled
+
+    - name: Include macOS specific tasks
+      include_tasks: tasks/macOS.yml
+      tags: ['macOS']
+      when: ansible_os_family == "Darwin"
+
+    - name: Install cross-plattform packages
+      include_tasks: tasks/crossplattform-packages.yml
+      tags: ['packages']
